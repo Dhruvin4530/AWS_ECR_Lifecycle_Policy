@@ -1,11 +1,11 @@
 # Region 
 variable "region" {
   type = string
-  default = "us-east-2"
+  default = "us-east-1"
 }
 
 # ECR Name
 variable "ecr_name" {
-  type = string
-  default = "demoacr"
+  type = list(string)
+  default = [ "demo", "demo2" ]
 }

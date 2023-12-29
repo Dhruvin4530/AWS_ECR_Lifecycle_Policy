@@ -1,6 +1,7 @@
 # creating lifecycle policy for ECR
 resource "aws_ecr_lifecycle_policy" "foopolicy" {
-  repository = var.ecr_name
+  count = length(var.ecr_name)
+  repository = var.ecr_name[count.index]
 
   policy = <<EOF
 {
